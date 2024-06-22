@@ -55,7 +55,11 @@ class OnboardingViewController: UIViewController {
         configureButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        HapticManager.shared.vibrateForSelection()
+    }
     func configureButton() {
+        HapticManager.shared.vibrate(for: .success)
         createNewWalletButton.addTarget(self, action: #selector(didTap), for: .touchUpInside)
     }
     @objc func didTap() {

@@ -13,9 +13,15 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        configureBackgroundController()
+        
     }
-    
-
+    override func viewWillAppear(_ animated: Bool) {
+        HapticManager.shared.vibrateForSelection()
+    }
+    func configureBackgroundController() {
+        view.backgroundColor = .white
+    }
    
 
 }

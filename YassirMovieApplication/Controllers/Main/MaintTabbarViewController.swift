@@ -18,10 +18,11 @@ class MaintTabbarViewController: UITabBarController {
         configureSetupTabbarViewController()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        HapticManager.shared.vibrateForSelection()
+    }
      func configureSetupTabbarViewController() {
       
-       
          Vc1.navigationItem.largeTitleDisplayMode = .never
          Vc2.navigationItem.largeTitleDisplayMode = .never
          Vc3.navigationItem.largeTitleDisplayMode = .never
@@ -33,7 +34,7 @@ class MaintTabbarViewController: UITabBarController {
      
       
          
-         nav1.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "wallet.pass"), tag: 0)
+         nav1.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "movieclapper"), tag: 0)
          nav2.tabBarItem = UITabBarItem(title: "Favourite", image: UIImage(systemName: "star.fill"), tag: 1)
          nav3.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
        
