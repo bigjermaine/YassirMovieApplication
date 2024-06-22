@@ -26,6 +26,7 @@
 		D07C24582C27772F00C5316F /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24572C27772F00C5316F /* FavoriteViewController.swift */; };
 		D07C245A2C27773A00C5316F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24592C27773A00C5316F /* SettingsViewController.swift */; };
 		D07C245C2C27778E00C5316F /* MaintTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C245B2C27778E00C5316F /* MaintTabbarViewController.swift */; };
+		D07C24602C277EC100C5316F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C245F2C277EC100C5316F /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D07C24572C27772F00C5316F /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		D07C24592C27773A00C5316F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D07C245B2C27778E00C5316F /* MaintTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintTabbarViewController.swift; sourceTree = "<group>"; };
+		D07C245F2C277EC100C5316F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		D07C24232C27200200C5316F /* YassirMovieApplication */ = {
 			isa = PBXGroup;
 			children = (
+				D07C245D2C277E9C00C5316F /* Views  */,
 				D07C24482C276EAF00C5316F /* GifFiles */,
 				D07C24452C276E6900C5316F /* Gif */,
 				D07C243B2C27215500C5316F /* Managers */,
@@ -166,6 +169,22 @@
 				D07C24592C27773A00C5316F /* SettingsViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		D07C245D2C277E9C00C5316F /* Views  */ = {
+			isa = PBXGroup;
+			children = (
+				D07C245E2C277EA800C5316F /* Home */,
+			);
+			path = "Views ";
+			sourceTree = "<group>";
+		};
+		D07C245E2C277EA800C5316F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D07C245F2C277EC100C5316F /* HomeTableViewCell.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +274,7 @@
 				D07C245C2C27778E00C5316F /* MaintTabbarViewController.swift in Sources */,
 				D07C243F2C27223700C5316F /* HapticManager.swift in Sources */,
 				D07C24292C27200200C5316F /* OnboardingViewController.swift in Sources */,
+				D07C24602C277EC100C5316F /* HomeTableViewCell.swift in Sources */,
 				D07C24252C27200200C5316F /* AppDelegate.swift in Sources */,
 				D07C24562C27772000C5316F /* HomeViewController.swift in Sources */,
 				D07C24582C27772F00C5316F /* FavoriteViewController.swift in Sources */,
