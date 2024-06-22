@@ -24,7 +24,7 @@ class OnboardingViewController: UIViewController {
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Welcome To The Home Of Movies"
-        label.font = .italicSystemFont(ofSize: 28)
+        label.font = .italicSystemFont(ofSize: 23)
         label.clipsToBounds = true
         return label
     }()
@@ -52,6 +52,18 @@ class OnboardingViewController: UIViewController {
         addSubviews()
         setUpGif()
         configureConstriansts()
+        configureButton()
+    }
+    
+    func configureButton() {
+        createNewWalletButton.addTarget(self, action: #selector(didTap), for: .touchUpInside)
+    }
+    @objc func didTap() {
+        HapticManager.shared.vibrateForSelection()
+        let vc = UINavigationController(rootViewController: MaintTabbarViewController())
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true)
     }
     func configureBackgroundController() {
         view.backgroundColor = .white
@@ -74,13 +86,13 @@ class OnboardingViewController: UIViewController {
             ])
         NSLayoutConstraint.activate([
             onboardingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            onboardingLabel.topAnchor.constraint(equalTo: onboardingImageView.bottomAnchor, constant: 10),
+            onboardingLabel.topAnchor.constraint(equalTo: onboardingImageView.bottomAnchor, constant: 20),
             onboardingLabel.widthAnchor.constraint(equalTo: view.widthAnchor,constant: -40),
             ])
         
         NSLayoutConstraint.activate([
             createNewWalletButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            createNewWalletButton.topAnchor.constraint(equalTo: onboardingLabel.bottomAnchor, constant: 20),
+            createNewWalletButton.topAnchor.constraint(equalTo: onboardingLabel.bottomAnchor, constant: 30),
             createNewWalletButton.widthAnchor.constraint(equalTo: view.widthAnchor,constant: -40),
             createNewWalletButton.heightAnchor.constraint(equalToConstant: 50)
             ])

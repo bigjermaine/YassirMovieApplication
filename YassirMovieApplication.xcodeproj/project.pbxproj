@@ -22,13 +22,17 @@
 		D07C24502C276EAF00C5316F /* checking.gif in Resources */ = {isa = PBXBuildFile; fileRef = D07C244B2C276EAF00C5316F /* checking.gif */; };
 		D07C24512C276EAF00C5316F /* congratulations.gif in Resources */ = {isa = PBXBuildFile; fileRef = D07C244C2C276EAF00C5316F /* congratulations.gif */; };
 		D07C24522C276EAF00C5316F /* unboarding.gif in Resources */ = {isa = PBXBuildFile; fileRef = D07C244D2C276EAF00C5316F /* unboarding.gif */; };
+		D07C24562C27772000C5316F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24552C27772000C5316F /* HomeViewController.swift */; };
+		D07C24582C27772F00C5316F /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24572C27772F00C5316F /* FavoriteViewController.swift */; };
+		D07C245A2C27773A00C5316F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24592C27773A00C5316F /* SettingsViewController.swift */; };
+		D07C245C2C27778E00C5316F /* MaintTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C245B2C27778E00C5316F /* MaintTabbarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D07C24212C27200200C5316F /* YassirMovieApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirMovieApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07C24242C27200200C5316F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07C24262C27200200C5316F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D07C24282C27200200C5316F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		D07C24282C27200200C5316F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		D07C242D2C27200400C5316F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D07C24302C27200400C5316F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D07C24322C27200400C5316F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +44,10 @@
 		D07C244B2C276EAF00C5316F /* checking.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = checking.gif; sourceTree = "<group>"; };
 		D07C244C2C276EAF00C5316F /* congratulations.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = congratulations.gif; sourceTree = "<group>"; };
 		D07C244D2C276EAF00C5316F /* unboarding.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = unboarding.gif; sourceTree = "<group>"; };
+		D07C24552C27772000C5316F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D07C24572C27772F00C5316F /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		D07C24592C27773A00C5316F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D07C245B2C27778E00C5316F /* MaintTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintTabbarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +105,8 @@
 		D07C24392C27205200C5316F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D07C24282C27200200C5316F /* OnboardingViewController.swift */,
+				D07C24542C27770B00C5316F /* Main */,
+				D07C24532C2776FE00C5316F /* OnBoarding */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -138,6 +147,25 @@
 				D07C244D2C276EAF00C5316F /* unboarding.gif */,
 			);
 			path = GifFiles;
+			sourceTree = "<group>";
+		};
+		D07C24532C2776FE00C5316F /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				D07C24282C27200200C5316F /* OnboardingViewController.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		D07C24542C27770B00C5316F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D07C24552C27772000C5316F /* HomeViewController.swift */,
+				D07C245B2C27778E00C5316F /* MaintTabbarViewController.swift */,
+				D07C24572C27772F00C5316F /* FavoriteViewController.swift */,
+				D07C24592C27773A00C5316F /* SettingsViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,10 +252,14 @@
 			files = (
 				D07C24472C276E7800C5316F /* GifFile.swift in Sources */,
 				D07C243D2C27217100C5316F /* ApiManager.swift in Sources */,
+				D07C245C2C27778E00C5316F /* MaintTabbarViewController.swift in Sources */,
 				D07C243F2C27223700C5316F /* HapticManager.swift in Sources */,
 				D07C24292C27200200C5316F /* OnboardingViewController.swift in Sources */,
 				D07C24252C27200200C5316F /* AppDelegate.swift in Sources */,
+				D07C24562C27772000C5316F /* HomeViewController.swift in Sources */,
+				D07C24582C27772F00C5316F /* FavoriteViewController.swift in Sources */,
 				D07C24272C27200200C5316F /* SceneDelegate.swift in Sources */,
+				D07C245A2C27773A00C5316F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
