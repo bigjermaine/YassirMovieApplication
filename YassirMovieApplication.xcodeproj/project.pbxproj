@@ -9,21 +9,37 @@
 /* Begin PBXBuildFile section */
 		D07C24252C27200200C5316F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24242C27200200C5316F /* AppDelegate.swift */; };
 		D07C24272C27200200C5316F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24262C27200200C5316F /* SceneDelegate.swift */; };
-		D07C24292C27200200C5316F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24282C27200200C5316F /* ViewController.swift */; };
-		D07C242C2C27200200C5316F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07C242A2C27200200C5316F /* Main.storyboard */; };
+		D07C24292C27200200C5316F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24282C27200200C5316F /* OnboardingViewController.swift */; };
 		D07C242E2C27200400C5316F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D07C242D2C27200400C5316F /* Assets.xcassets */; };
 		D07C24312C27200400C5316F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07C242F2C27200400C5316F /* LaunchScreen.storyboard */; };
+		D07C243D2C27217100C5316F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C243C2C27217100C5316F /* ApiManager.swift */; };
+		D07C243F2C27223700C5316F /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C243E2C27223700C5316F /* HapticManager.swift */; };
+		D07C24422C27262F00C5316F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D07C24412C27262F00C5316F /* SDWebImage */; };
+		D07C24442C27262F00C5316F /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D07C24432C27262F00C5316F /* SDWebImageMapKit */; };
+		D07C24472C276E7800C5316F /* GifFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24462C276E7800C5316F /* GifFile.swift */; };
+		D07C244E2C276EAF00C5316F /* created.gif in Resources */ = {isa = PBXBuildFile; fileRef = D07C24492C276EAF00C5316F /* created.gif */; };
+		D07C244F2C276EAF00C5316F /* password.gif in Resources */ = {isa = PBXBuildFile; fileRef = D07C244A2C276EAF00C5316F /* password.gif */; };
+		D07C24502C276EAF00C5316F /* checking.gif in Resources */ = {isa = PBXBuildFile; fileRef = D07C244B2C276EAF00C5316F /* checking.gif */; };
+		D07C24512C276EAF00C5316F /* congratulations.gif in Resources */ = {isa = PBXBuildFile; fileRef = D07C244C2C276EAF00C5316F /* congratulations.gif */; };
+		D07C24522C276EAF00C5316F /* unboarding.gif in Resources */ = {isa = PBXBuildFile; fileRef = D07C244D2C276EAF00C5316F /* unboarding.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D07C24212C27200200C5316F /* YassirMovieApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirMovieApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07C24242C27200200C5316F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07C24262C27200200C5316F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D07C24282C27200200C5316F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D07C242B2C27200200C5316F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D07C24282C27200200C5316F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D07C242D2C27200400C5316F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D07C24302C27200400C5316F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D07C24322C27200400C5316F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D07C243C2C27217100C5316F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		D07C243E2C27223700C5316F /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		D07C24462C276E7800C5316F /* GifFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifFile.swift; sourceTree = "<group>"; };
+		D07C24492C276EAF00C5316F /* created.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = created.gif; sourceTree = "<group>"; };
+		D07C244A2C276EAF00C5316F /* password.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = password.gif; sourceTree = "<group>"; };
+		D07C244B2C276EAF00C5316F /* checking.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = checking.gif; sourceTree = "<group>"; };
+		D07C244C2C276EAF00C5316F /* congratulations.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = congratulations.gif; sourceTree = "<group>"; };
+		D07C244D2C276EAF00C5316F /* unboarding.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = unboarding.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07C24442C27262F00C5316F /* SDWebImageMapKit in Frameworks */,
+				D07C24422C27262F00C5316F /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +74,70 @@
 		D07C24232C27200200C5316F /* YassirMovieApplication */ = {
 			isa = PBXGroup;
 			children = (
-				D07C24242C27200200C5316F /* AppDelegate.swift */,
-				D07C24262C27200200C5316F /* SceneDelegate.swift */,
-				D07C24282C27200200C5316F /* ViewController.swift */,
-				D07C242A2C27200200C5316F /* Main.storyboard */,
-				D07C242D2C27200400C5316F /* Assets.xcassets */,
-				D07C242F2C27200400C5316F /* LaunchScreen.storyboard */,
+				D07C24482C276EAF00C5316F /* GifFiles */,
+				D07C24452C276E6900C5316F /* Gif */,
+				D07C243B2C27215500C5316F /* Managers */,
+				D07C243A2C27207100C5316F /* Resources */,
+				D07C24392C27205200C5316F /* Controllers */,
+				D07C24382C27200900C5316F /* AppDelegates */,
 				D07C24322C27200400C5316F /* Info.plist */,
 			);
 			path = YassirMovieApplication;
+			sourceTree = "<group>";
+		};
+		D07C24382C27200900C5316F /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				D07C24262C27200200C5316F /* SceneDelegate.swift */,
+				D07C24242C27200200C5316F /* AppDelegate.swift */,
+			);
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		D07C24392C27205200C5316F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D07C24282C27200200C5316F /* OnboardingViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D07C243A2C27207100C5316F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D07C242F2C27200400C5316F /* LaunchScreen.storyboard */,
+				D07C242D2C27200400C5316F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D07C243B2C27215500C5316F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D07C243C2C27217100C5316F /* ApiManager.swift */,
+				D07C243E2C27223700C5316F /* HapticManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D07C24452C276E6900C5316F /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				D07C24462C276E7800C5316F /* GifFile.swift */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
+		D07C24482C276EAF00C5316F /* GifFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D07C24492C276EAF00C5316F /* created.gif */,
+				D07C244A2C276EAF00C5316F /* password.gif */,
+				D07C244B2C276EAF00C5316F /* checking.gif */,
+				D07C244C2C276EAF00C5316F /* congratulations.gif */,
+				D07C244D2C276EAF00C5316F /* unboarding.gif */,
+			);
+			path = GifFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +156,10 @@
 			dependencies = (
 			);
 			name = YassirMovieApplication;
+			packageProductDependencies = (
+				D07C24412C27262F00C5316F /* SDWebImage */,
+				D07C24432C27262F00C5316F /* SDWebImageMapKit */,
+			);
 			productName = YassirMovieApplication;
 			productReference = D07C24212C27200200C5316F /* YassirMovieApplication.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +188,9 @@
 				Base,
 			);
 			mainGroup = D07C24182C27200200C5316F;
+			packageReferences = (
+				D07C24402C27262F00C5316F /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = D07C24222C27200200C5316F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,8 +206,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D07C24312C27200400C5316F /* LaunchScreen.storyboard in Resources */,
+				D07C24502C276EAF00C5316F /* checking.gif in Resources */,
+				D07C244E2C276EAF00C5316F /* created.gif in Resources */,
 				D07C242E2C27200400C5316F /* Assets.xcassets in Resources */,
-				D07C242C2C27200200C5316F /* Main.storyboard in Resources */,
+				D07C24522C276EAF00C5316F /* unboarding.gif in Resources */,
+				D07C24512C276EAF00C5316F /* congratulations.gif in Resources */,
+				D07C244F2C276EAF00C5316F /* password.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D07C24292C27200200C5316F /* ViewController.swift in Sources */,
+				D07C24472C276E7800C5316F /* GifFile.swift in Sources */,
+				D07C243D2C27217100C5316F /* ApiManager.swift in Sources */,
+				D07C243F2C27223700C5316F /* HapticManager.swift in Sources */,
+				D07C24292C27200200C5316F /* OnboardingViewController.swift in Sources */,
 				D07C24252C27200200C5316F /* AppDelegate.swift in Sources */,
 				D07C24272C27200200C5316F /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +234,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D07C242A2C27200200C5316F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D07C242B2C27200200C5316F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D07C242F2C27200400C5316F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +376,6 @@
 				INFOPLIST_FILE = YassirMovieApplication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +403,6 @@
 				INFOPLIST_FILE = YassirMovieApplication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,6 +440,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D07C24402C27262F00C5316F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D07C24412C27262F00C5316F /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D07C24402C27262F00C5316F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		D07C24432C27262F00C5316F /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D07C24402C27262F00C5316F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D07C24192C27200200C5316F /* Project object */;
 }
