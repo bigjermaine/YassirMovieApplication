@@ -8,15 +8,78 @@
 import UIKit
 
 class FavoriteViewController: UIViewController {
-
+    
+    private let discoverMoviesTableView:UITableView =  {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
+        tableView.backgroundColor =  .white
+        return tableView
+    }()
+    
+    private var results:[Movie] = UserDefaults().downloadedMovies()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        configureBackgroundController()
+        addSuview()
+        configureConstraints()
+        configureTableDelegate()
+      
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        results = UserDefaults().downloadedMovies()
+        discoverMoviesTableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         HapticManager.shared.vibrateForSelection()
     }
+    
+    
+    private func addSuview() {
+        view.addSubview(discoverMoviesTableView)
+    }
+    private func configureConstraints() {
+        discoverMoviesTableView.frame = view.bounds
+    }
+    private  func configureTableDelegate() {
+        discoverMoviesTableView.delegate = self
+        discoverMoviesTableView.dataSource = self
+    }
+    private func configureBackgroundController() {
+        view.backgroundColor = .white
+        discoverMoviesTableView.backgroundColor = .white
+        title = "Movies"
+    }
+   
 
+}
+
+extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return results.count
+        }
+        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else
+            {return UITableViewCell()}
+         let result = results[indexPath.row]
+        cell.configure(viewModel: result)
+        cell.bookMarkButton.isHidden = true
+            return cell
+        }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let result = results[indexPath.row]
+        HapticManager.shared.vibrateForSelection()
+        let vc = DescriptiveViewController()
+        vc.result = result
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: false)
+    }
 }

@@ -13,7 +13,7 @@ class ApiManager {
     
   static let shared = ApiManager()
     
-    
+    //Note:Network fetch through Alamofire
     public func getDiscoverMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
          createRequest(with: "discover/movie", page: "1", type: .get) { request in
             AF.request(request)
@@ -41,17 +41,15 @@ class ApiManager {
         
     }
     
-    func getYoutubeTrailer(with query: String,completion: @escaping (Result<Videoelement, Error>) ->  Void)  {
+    //Note:Network fetch through URLSession
+    public  func getYoutubeTrailer(with query: String,completion: @escaping (Result<Videoelement, Error>) ->  Void)  {
      guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
         
-        
         guard let  url =  URL(string:"https://youtube.googleapis.com/youtube/v3/search?q=\(query)&key=\(Constants.google)") else {return}
-        
         let task = URLSession.shared.dataTask(with: url) { Data, _ ,error in
             guard let  Data = Data  , error == nil else {
                 return
             }
-           
             do {
                 let results = try JSONDecoder().decode(Youtubesearchresults.self,from: Data)
                 completion(.success(results.items[0]))
@@ -62,7 +60,8 @@ class ApiManager {
         task.resume()
     }
     
-    func createRequest(with url:String,page:String, type:HTTPMethod, completion: @escaping(URLRequest)-> Void) {
+    
+   private func createRequest(with url:String,page:String, type:HTTPMethod, completion: @escaping(URLRequest)-> Void) {
         guard var components = URLComponents(string: "\(Constants.BaseURL)\(url)") else {return}
             let queryItems: [URLQueryItem] = [
                 URLQueryItem(name: "page", value: "\(page)")

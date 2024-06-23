@@ -86,10 +86,8 @@ class DescriptiveViewController: UIViewController {
     }()
     private let favouriteButton:UIButton = {
         let button = UIButton()
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 18, weight: .bold)
-        button.titleLabel?.font = label.font
         button.setTitle("Add To Favourite", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemYellow
         button.setTitleColor(.white, for: .normal)
@@ -100,6 +98,7 @@ class DescriptiveViewController: UIViewController {
     }()
     
     var result:Movie?
+    var checkFavoriteBool:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -108,10 +107,47 @@ class DescriptiveViewController: UIViewController {
         configureConstriants()
         configureData()
         configureAction()
+        checkIfMovieIsFavourite()
     }
     private func configureAction() {
-        favouriteButton.addTarget(self, action: #selector(<#T##@objc method#>), for: <#T##UIControl.Event#>)
+        favouriteButton.addTarget(self, action: #selector(didTapToFavouriteMovie), for: .touchUpInside)
         
+    }
+    private func checkIfMovieIsFavourite() {
+        guard let result = result else {
+            checkFavoriteBool = false
+            favouriteButton.setTitle("Add To Favourite", for: .normal)
+            favouriteButton.backgroundColor = .systemYellow
+            return
+        }
+        
+        var downloadedMovies = UserDefaults().downloadedMovies()
+        
+        if let index = downloadedMovies.firstIndex(where: { $0.id == result.id }) {
+            // Movie is found in downloadedMovies, mark as favorite
+            checkFavoriteBool = true
+            favouriteButton.setTitle("Part Of Your Favourites⭐️", for: .normal)
+            favouriteButton.backgroundColor = .systemBlue
+        } else {
+            // Movie is not found in downloadedMovies, mark as not favorite
+            checkFavoriteBool = false
+            favouriteButton.setTitle("Add To Favourite", for: .normal)
+            favouriteButton.backgroundColor = .systemYellow
+        }
+    }
+
+   @objc func didTapToFavouriteMovie() {
+       if checkFavoriteBool {
+           guard let result = result else {return}
+           UserDefaults().deleteMovie(movie: result)
+           checkIfMovieIsFavourite()
+           
+       }else{
+           guard let result = result else {return}
+           UserDefaults().downloadMovie(movie: result)
+           tabBarController?.viewControllers?[1].tabBarItem.badgeValue = "New"
+           checkIfMovieIsFavourite()
+       }
     }
     private func configureData() {
         noVideoImageView.image = UIImage.gifImageWithName("created")
@@ -139,8 +175,9 @@ class DescriptiveViewController: UIViewController {
                     self?.spinner.dismiss()
                 }
             case .failure(let error):
-                self?.spinner.dismiss()
-                self?.noVideoImageView.isHidden = false
+                guard let self =  self else {return}
+                Alert.showBasic(title: "Error", message: error.localizedDescription, vc: self)
+                self.noVideoImageView.isHidden = false
             }
         }
     }
@@ -193,13 +230,13 @@ class DescriptiveViewController: UIViewController {
             descriptiveLabel.trailingAnchor.constraint(equalTo:view.trailingAnchor,constant: -10),
             descriptiveLabel.bottomAnchor.constraint(equalTo: webView.topAnchor,constant: -10),
             
-            webView.topAnchor.constraint(equalTo: descriptiveLabel.bottomAnchor, constant: 10),
+            webView.topAnchor.constraint(equalTo: descriptiveLabel.bottomAnchor, constant: 20),
             webView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10),
             webView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -10),
             webView.heightAnchor.constraint(equalToConstant: 250),
             
             
-            noVideoImageView.topAnchor.constraint(equalTo: descriptiveLabel.bottomAnchor, constant: 10),
+            noVideoImageView.topAnchor.constraint(equalTo: descriptiveLabel.bottomAnchor, constant: 20),
             noVideoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             noVideoImageView.widthAnchor.constraint(equalToConstant: 100),
             noVideoImageView.heightAnchor.constraint(equalToConstant: 100),
@@ -207,11 +244,11 @@ class DescriptiveViewController: UIViewController {
             
             
             
-            favouriteButton.topAnchor.constraint(equalTo: webView.bottomAnchor, constant: 10),
+            favouriteButton.topAnchor.constraint(equalTo: webView.bottomAnchor, constant: 20),
             favouriteButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10),
             favouriteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -10),
             favouriteButton.heightAnchor.constraint(equalToConstant: 50),
-            favouriteButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor,constant: -10),
+            favouriteButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor,constant: -20),
             
             
             
