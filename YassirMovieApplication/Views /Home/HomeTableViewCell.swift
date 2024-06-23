@@ -42,16 +42,12 @@ class HomeTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let bookMarkButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("B000", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.textAlignment = .center
-        button.titleLabel?.numberOfLines = 1
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 4
-        button.titleLabel?.font = .systemFont(ofSize: 12)
-        return button
+   public let bookMarkButton: UIButton = {
+           let button = UIButton()
+           button.setImage(UIImage(systemName: "star.fill"), for: .normal)
+           button.tintColor = .systemBlue
+           button.translatesAutoresizingMaskIntoConstraints = false
+           return button
     }()
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -86,7 +82,7 @@ class HomeTableViewCell: UITableViewCell {
             movieLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 10),
             movieLabel.leadingAnchor.constraint(equalTo: movieImageView.trailingAnchor, constant: 10),
             movieLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            //movieLabel.bottomAnchor.constraint(equalTo: subMovielabel.topAnchor,constant: -10),
+            movieLabel.bottomAnchor.constraint(equalTo: subMovielabel.topAnchor,constant: -10),
             
             subMovielabel.topAnchor.constraint(equalTo: movieLabel.bottomAnchor,constant: 5),
             subMovielabel.leadingAnchor.constraint(equalTo: movieImageView.trailingAnchor, constant: 10),
