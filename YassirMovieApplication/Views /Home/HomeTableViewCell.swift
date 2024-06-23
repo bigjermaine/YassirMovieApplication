@@ -103,6 +103,15 @@ class HomeTableViewCell: UITableViewCell {
         guard let backdropPath = viewModel.backdropPath else {return}
         guard let url = URL(string: "\(Constants.imageBaseUrl)\(backdropPath)") else {return}
         movieImageView.sd_setImage(with: url)
+        
+        let downloadedMovies = UserDefaults().downloadedMovies()
+        
+        if let index = downloadedMovies.firstIndex(where: { $0.id == viewModel.id }) {
+            bookMarkButton.isHidden = false
+        } else {
+            bookMarkButton.isHidden = true
+        }
+        
     }
 
 }

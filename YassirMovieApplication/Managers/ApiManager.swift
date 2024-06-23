@@ -14,8 +14,8 @@ class ApiManager {
   static let shared = ApiManager()
     
     //Note:Network fetch through Alamofire
-    public func getDiscoverMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
-         createRequest(with: "discover/movie", page: "1", type: .get) { request in
+    public func getDiscoverMovies(page:Int,completion: @escaping (Result<[Movie], Error>) -> Void) {
+         createRequest(with: "discover/movie", page: "\(page)", type: .get) { request in
             AF.request(request)
                 .responseData { response in
                     switch response.result {

@@ -121,7 +121,7 @@ class DescriptiveViewController: UIViewController {
             return
         }
         
-        var downloadedMovies = UserDefaults().downloadedMovies()
+        let downloadedMovies = UserDefaults().downloadedMovies()
         
         if let index = downloadedMovies.firstIndex(where: { $0.id == result.id }) {
             // Movie is found in downloadedMovies, mark as favorite
@@ -178,6 +178,7 @@ class DescriptiveViewController: UIViewController {
                 guard let self =  self else {return}
                 Alert.showBasic(title: "Error", message: error.localizedDescription, vc: self)
                 self.noVideoImageView.isHidden = false
+                self.spinner.dismiss()
             }
         }
     }
