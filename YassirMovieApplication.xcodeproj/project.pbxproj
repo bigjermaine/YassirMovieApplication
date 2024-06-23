@@ -25,8 +25,9 @@
 		D07C24562C27772000C5316F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24552C27772000C5316F /* HomeViewController.swift */; };
 		D07C24582C27772F00C5316F /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24572C27772F00C5316F /* FavoriteViewController.swift */; };
 		D07C245A2C27773A00C5316F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24592C27773A00C5316F /* SettingsViewController.swift */; };
-		D07C245C2C27778E00C5316F /* MaintTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C245B2C27778E00C5316F /* MaintTabbarViewController.swift */; };
+		D07C245C2C27778E00C5316F /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C245B2C27778E00C5316F /* MainTabbarViewController.swift */; };
 		D07C24602C277EC100C5316F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C245F2C277EC100C5316F /* HomeTableViewCell.swift */; };
+		D07C24632C27B98C00C5316F /* DescriptiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24622C27B98C00C5316F /* DescriptiveViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +49,9 @@
 		D07C24552C27772000C5316F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D07C24572C27772F00C5316F /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		D07C24592C27773A00C5316F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		D07C245B2C27778E00C5316F /* MaintTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintTabbarViewController.swift; sourceTree = "<group>"; };
+		D07C245B2C27778E00C5316F /* MainTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
 		D07C245F2C277EC100C5316F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		D07C24622C27B98C00C5316F /* DescriptiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptiveViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,8 +165,8 @@
 		D07C24542C27770B00C5316F /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				D07C24552C27772000C5316F /* HomeViewController.swift */,
-				D07C245B2C27778E00C5316F /* MaintTabbarViewController.swift */,
+				D07C24612C27B96C00C5316F /* Home */,
+				D07C245B2C27778E00C5316F /* MainTabbarViewController.swift */,
 				D07C24572C27772F00C5316F /* FavoriteViewController.swift */,
 				D07C24592C27773A00C5316F /* SettingsViewController.swift */,
 			);
@@ -183,6 +185,15 @@
 			isa = PBXGroup;
 			children = (
 				D07C245F2C277EC100C5316F /* HomeTableViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D07C24612C27B96C00C5316F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D07C24552C27772000C5316F /* HomeViewController.swift */,
+				D07C24622C27B98C00C5316F /* DescriptiveViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -271,7 +282,7 @@
 			files = (
 				D07C24472C276E7800C5316F /* GifFile.swift in Sources */,
 				D07C243D2C27217100C5316F /* ApiManager.swift in Sources */,
-				D07C245C2C27778E00C5316F /* MaintTabbarViewController.swift in Sources */,
+				D07C245C2C27778E00C5316F /* MainTabbarViewController.swift in Sources */,
 				D07C243F2C27223700C5316F /* HapticManager.swift in Sources */,
 				D07C24292C27200200C5316F /* OnboardingViewController.swift in Sources */,
 				D07C24602C277EC100C5316F /* HomeTableViewCell.swift in Sources */,
@@ -280,6 +291,7 @@
 				D07C24582C27772F00C5316F /* FavoriteViewController.swift in Sources */,
 				D07C24272C27200200C5316F /* SceneDelegate.swift in Sources */,
 				D07C245A2C27773A00C5316F /* SettingsViewController.swift in Sources */,
+				D07C24632C27B98C00C5316F /* DescriptiveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

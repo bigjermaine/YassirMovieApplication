@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MaintTabbarViewController: UITabBarController {
+class MainTabbarViewController: UITabBarController {
     let Vc1 =  HomeViewController()
     let Vc2 =  FavoriteViewController()
     let Vc3 =  SettingsViewController()
@@ -18,9 +18,7 @@ class MaintTabbarViewController: UITabBarController {
         configureSetupTabbarViewController()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        HapticManager.shared.vibrateForSelection()
-    }
+   
      func configureSetupTabbarViewController() {
       
          Vc1.navigationItem.largeTitleDisplayMode = .never

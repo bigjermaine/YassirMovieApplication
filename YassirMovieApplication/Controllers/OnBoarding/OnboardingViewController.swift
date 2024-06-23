@@ -62,12 +62,15 @@ class OnboardingViewController: UIViewController {
         HapticManager.shared.vibrate(for: .success)
         createNewWalletButton.addTarget(self, action: #selector(didTap), for: .touchUpInside)
     }
+    
     @objc func didTap() {
         HapticManager.shared.vibrateForSelection()
-        let vc = UINavigationController(rootViewController: MaintTabbarViewController())
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        present(vc, animated: true)
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            let  maintTabbarViewController = MainTabbarViewController()
+            window.rootViewController = maintTabbarViewController
+         }
+       
     }
     func configureBackgroundController() {
         view.backgroundColor = .white
@@ -100,7 +103,6 @@ class OnboardingViewController: UIViewController {
             createNewWalletButton.widthAnchor.constraint(equalTo: view.widthAnchor,constant: -40),
             createNewWalletButton.heightAnchor.constraint(equalToConstant: 50)
             ])
-        
     
     }
 }

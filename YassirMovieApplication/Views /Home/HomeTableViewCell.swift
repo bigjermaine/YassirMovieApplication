@@ -13,7 +13,9 @@ class HomeTableViewCell: UITableViewCell {
     private let movieImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
-        imageView.image = UIImage(named: "jamitCoinIcon")
+        imageView.image = UIImage(named: "2")
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 4
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -21,28 +23,29 @@ class HomeTableViewCell: UITableViewCell {
     
    private let movieLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
-        label.numberOfLines = 0
-       label.font = .systemFont(ofSize: 16, weight: .bold)
-        label.textAlignment = .right
+        label.textColor = .black
+        label.numberOfLines = 3
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "The Coming TRON"
+        label.text = "The Coming TRONThe Coming TRONThe Coming TRON"
         return label
    }()
     private let subMovielabel: UILabel = {
         let label = UILabel()
-        label.textColor = .gray
-        label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 12)
+        label.textColor = .black
+        label.numberOfLines = 1
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 12, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "1994"
+        label.text = "1994The Coming TRONThe Coming TRON"
         return label
     }()
     
     private let bookMarkButton: UIButton = {
         let button = UIButton()
-        button.setTitle("B", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitle("B000", for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.numberOfLines = 1
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -75,21 +78,22 @@ class HomeTableViewCell: UITableViewCell {
     }
      func configureLayout() {
          NSLayoutConstraint.activate([
-            movieImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            movieImageView.heightAnchor.constraint(equalToConstant: 100),
             movieImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            movieImageView.widthAnchor.constraint(equalToConstant: 50),
-            movieImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor,constant: -20),
+            movieImageView.widthAnchor.constraint(equalToConstant: 80),
+            movieImageView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 10),
              
-            movieLabel.topAnchor.constraint(equalTo: movieImageView.bottomAnchor,constant: 10),
-            movieLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            movieLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 10),
+            movieLabel.leadingAnchor.constraint(equalTo: movieImageView.trailingAnchor, constant: 10),
             movieLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-          
-            subMovielabel.topAnchor.constraint(equalTo: subMovielabel.bottomAnchor,constant: 10),
-            subMovielabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            subMovielabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-          
+            //movieLabel.bottomAnchor.constraint(equalTo: subMovielabel.topAnchor,constant: -10),
             
-            bookMarkButton.bottomAnchor.constraint(equalTo: subMovielabel.bottomAnchor,constant: 10),
+            subMovielabel.topAnchor.constraint(equalTo: movieLabel.bottomAnchor,constant: 5),
+            subMovielabel.leadingAnchor.constraint(equalTo: movieImageView.trailingAnchor, constant: 10),
+            subMovielabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+           // subMovielabel.bottomAnchor.constraint(equalTo: movieImageView.bottomAnchor),
+            
+            bookMarkButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -10),
             bookMarkButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             bookMarkButton.heightAnchor.constraint(equalToConstant: 20),
             bookMarkButton.widthAnchor.constraint(equalToConstant: 20)
