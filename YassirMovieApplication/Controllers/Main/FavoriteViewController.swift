@@ -34,7 +34,8 @@ class FavoriteViewController: UIViewController {
         addSuview()
         configureConstraints()
         configureTableDelegate()
-        noFavouritesImageView.image = UIImage.gifImageWithName("password")
+        setUpGif()
+        makeBadgeNil()
        
       
     }
