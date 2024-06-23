@@ -24,7 +24,7 @@ class ApiManager {
                             let result = try JSONDecoder().decode(DiscoverMovieResponse.self, from: data)
                             print(result)
                             completion(.success(result.results))
-                        } catch let decodingError {
+                        } catch _ {
                             completion(.failure(NetworkError.decodingFailed))
                         }
                     case .failure(let error):
@@ -39,6 +39,27 @@ class ApiManager {
                 }
         }
         
+    }
+    
+    func getYoutubeTrailer(with query: String,completion: @escaping (Result<Videoelement, Error>) ->  Void)  {
+     guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
+        
+        
+        guard let  url =  URL(string:"https://youtube.googleapis.com/youtube/v3/search?q=\(query)&key=\(Constants.google)") else {return}
+        
+        let task = URLSession.shared.dataTask(with: url) { Data, _ ,error in
+            guard let  Data = Data  , error == nil else {
+                return
+            }
+           
+            do {
+                let results = try JSONDecoder().decode(Youtubesearchresults.self,from: Data)
+                completion(.success(results.items[0]))
+            }catch {
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
     }
     
     func createRequest(with url:String,page:String, type:HTTPMethod, completion: @escaping(URLRequest)-> Void) {

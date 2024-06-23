@@ -10,7 +10,7 @@ import UIKit
 class OnboardingViewController: UIViewController {
     private let  onboardingImageView : UIImageView  = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "tonHomeImage")
+        imageView.image = UIImage(named: "")
         imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill

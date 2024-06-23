@@ -7,47 +7,47 @@
 
 import Foundation
 
-//
-//extension  UserDefaults  {
-//
-//    static let dowloadEpisodeKey = "dowloadEpisodeKey"
-//    
-//     func downloadMovie(episode:PodcastEpisode) {
-//        
-//        do {
-//            var dowloadEpisodes =  dowloadedEpisodes()
-//            dowloadEpisodes.append(episode)
-//            let data = try JSONEncoder().encode(dowloadEpisodes)
-//            UserDefaults.standard.set(data, forKey: UserDefaults.dowloadEpisodeKey)
-//        }catch let error {
-//            print(error.localizedDescription)
-//        }
-//    }
-//    
-//     func dowloadedMovies() -> [PodcastEpisode]  {
-//        guard let episodeData = data(forKey: UserDefaults.dowloadEpisodeKey) else {return []}
-//        do {
-//            let data =  try JSONDecoder().decode([PodcastEpisode].self, from: episodeData)
-//            return data
-//        }catch let error {
-//            print(error)
-//        }
-//        return []
-//    }
-//   
-//    func deleteMovie(at index: Int) {
-//        var downloadEpisodes =  dowloadedEpisodes()
-//        guard index >= 0, index < downloadEpisodes.count else {
-//            return
-//        }
-//        downloadEpisodes.remove(at: index)
-//        do {
-//            let data = try JSONEncoder().encode(downloadEpisodes)
-//            set(data, forKey: UserDefaults.dowloadEpisodeKey)
-//        } catch let error {
-//            print(error.localizedDescription)
-//        }
-//    }
-//}
-//
-//
+
+extension  UserDefaults  {
+
+    static let dowloadedMoviesKey = "dowloadEpisodeKey"
+    
+     func downloadMovie(episode:Movie) {
+        
+        do {
+            var dowloadEpisodes =  dowloadedMovies()
+            dowloadEpisodes.append(episode)
+            let data = try JSONEncoder().encode(dowloadEpisodes)
+            UserDefaults.standard.set(data, forKey: UserDefaults.dowloadedMoviesKey)
+        }catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+     func dowloadedMovies() -> [Movie]  {
+        guard let episodeData = data(forKey: UserDefaults.dowloadedMoviesKey) else {return []}
+        do {
+            let data =  try JSONDecoder().decode([Movie].self, from: episodeData)
+            return data
+        }catch let error {
+            print(error)
+        }
+        return []
+    }
+   
+    func deleteMovie(at index: Int) {
+        var dowloadedMovies =  dowloadedMovies()
+        guard index >= 0, index < dowloadedMovies.count else {
+            return
+        }
+        dowloadedMovies.remove(at: index)
+        do {
+            let data = try JSONEncoder().encode(dowloadedMovies)
+            set(data, forKey: UserDefaults.dowloadedMoviesKey)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+}
+
+

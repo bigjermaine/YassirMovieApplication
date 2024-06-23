@@ -46,9 +46,9 @@ class HomeViewController: UIViewController {
                     self?.discoverMoviesTableView.reloadData()
                     self?.spinner.dismiss()
                 }
-              case .failure(let failure):
+              case .failure(let error):
                 guard let self =  self else {return}
-                Alert.showBasic(title: "Error", message: "try again later", vc: self)
+                Alert.showBasic(title: "Error", message: error.localizedDescription, vc: self)
                 self.spinner.dismiss()
             }
         }
