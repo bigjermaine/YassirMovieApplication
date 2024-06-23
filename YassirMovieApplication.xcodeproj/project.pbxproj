@@ -12,6 +12,8 @@
 		D00337CC2C27CAD200060794 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D00337CB2C27CAD200060794 /* AlamofireDynamic */; };
 		D00337CF2C27CC7F00060794 /* DiscoverMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337CE2C27CC7F00060794 /* DiscoverMovie.swift */; };
 		D00337D22C27D4DA00060794 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337D12C27D4DA00060794 /* AlertView.swift */; };
+		D00337D42C27DC7C00060794 /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337D32C27DC7C00060794 /* CustomErrors.swift */; };
+		D00337D62C27DC9B00060794 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337D52C27DC9B00060794 /* Constants.swift */; };
 		D07C24252C27200200C5316F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24242C27200200C5316F /* AppDelegate.swift */; };
 		D07C24272C27200200C5316F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24262C27200200C5316F /* SceneDelegate.swift */; };
 		D07C24292C27200200C5316F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24282C27200200C5316F /* OnboardingViewController.swift */; };
@@ -40,6 +42,8 @@
 		D00337C62C27CA1300060794 /* BookMarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkManager.swift; sourceTree = "<group>"; };
 		D00337CE2C27CC7F00060794 /* DiscoverMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMovie.swift; sourceTree = "<group>"; };
 		D00337D12C27D4DA00060794 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		D00337D32C27DC7C00060794 /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
+		D00337D52C27DC9B00060794 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D07C24212C27200200C5316F /* YassirMovieApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirMovieApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07C24242C27200200C5316F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07C24262C27200200C5316F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				D00337D12C27D4DA00060794 /* AlertView.swift */,
+				D00337D32C27DC7C00060794 /* CustomErrors.swift */,
+				D00337D52C27DC9B00060794 /* Constants.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -317,10 +323,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D07C24472C276E7800C5316F /* GifFile.swift in Sources */,
+				D00337D62C27DC9B00060794 /* Constants.swift in Sources */,
 				D07C243D2C27217100C5316F /* ApiManager.swift in Sources */,
 				D07C245C2C27778E00C5316F /* MainTabbarViewController.swift in Sources */,
 				D07C243F2C27223700C5316F /* HapticManager.swift in Sources */,
 				D07C24292C27200200C5316F /* OnboardingViewController.swift in Sources */,
+				D00337D42C27DC7C00060794 /* CustomErrors.swift in Sources */,
 				D00337D22C27D4DA00060794 /* AlertView.swift in Sources */,
 				D07C24602C277EC100C5316F /* HomeTableViewCell.swift in Sources */,
 				D07C24252C27200200C5316F /* AppDelegate.swift in Sources */,

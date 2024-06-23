@@ -8,13 +8,6 @@
 import Foundation
 import Alamofire
 
-struct Constants {
-    static let Api_key = "30bbc9465ce5edc1448ae2367d7727b7"
-    static let BaseURL = "https://api.themoviedb.org/3/"
-    static let imageBaseUrl = "https://image.tmdb.org/t/p/w500/"
-    static let AuthorizationToken =  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZjgwMDI5MTMyYzJhYWFhNjVjNTU1ZDg4ZDk5Zjc0ZSIsIm5iZiI6MTcxOTA4NzA2My42NzAwMjksInN1YiI6IjY2NzcyZWQ0NTJlOGQ1MDk5MTVlNzBiMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GqDlNVeG1TpJRdDNx6jDIlDwo0uHOi05_fUdJ5nEvHU"
-}
-
 
 class ApiManager {
     
@@ -32,10 +25,16 @@ class ApiManager {
                             print(result)
                             completion(.success(result.results))
                         } catch let decodingError {
-                            completion(.failure(decodingError))
+                            completion(.failure(NetworkError.decodingFailed))
                         }
                     case .failure(let error):
-                        completion(.failure(error))
+                        if let underlyingError = error.underlyingError as NSError?,
+                           underlyingError.domain == NSURLErrorDomain,
+                           underlyingError.code == NSURLErrorNotConnectedToInternet {
+                            completion(.failure(NetworkError.noInternetConnection))
+                        } else {
+                            completion(.failure(error))
+                        }
                     }
                 }
         }

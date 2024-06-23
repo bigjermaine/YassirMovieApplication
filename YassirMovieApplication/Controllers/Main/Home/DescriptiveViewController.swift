@@ -124,7 +124,7 @@ class DescriptiveViewController: UIViewController {
     }
     private  func configureBackgroundController() {
         view.backgroundColor = .white
-        title = "Movie Detials"
+        title = "Movie Details"
      }
    
 
