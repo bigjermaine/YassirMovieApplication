@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class DescriptiveViewController: UIViewController {
     
     private let scrollView: UIScrollView = {
@@ -61,16 +61,26 @@ class DescriptiveViewController: UIViewController {
         return label
     }()
     
-    
+    private var result:Movie?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureBackgroundController()
         addSubviews()
         configureConstriants()
+        configureData()
       }
+    private func configureData() {
+        guard let result = result else {return}
+        titleLabel.text = result.title
+        subTitleLabel.text = result.releaseDate
+        descriptiveLabel.text = result.overview
+        guard let backdropPath = result.backdropPath else {return}
+        guard let url = URL(string: "\(Constants.imageBaseUrl)\(backdropPath)") else {return}
+        movieImageView.sd_setImage(with: url)
+    }
     
-    func addSubviews() {
+   private func addSubviews() {
         view.addSubview(scrollView)
         scrollView.addSubview(movieImageView)
         scrollView.addSubview(titleLabel)
@@ -79,7 +89,7 @@ class DescriptiveViewController: UIViewController {
         
     }
     
-     func configureConstriants() {
+    private func configureConstriants() {
          NSLayoutConstraint.activate([
              scrollView.topAnchor.constraint(equalTo: view.topAnchor),
              scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -112,7 +122,7 @@ class DescriptiveViewController: UIViewController {
          
      ])
     }
-     func configureBackgroundController() {
+    private  func configureBackgroundController() {
         view.backgroundColor = .white
         title = "Movie Detials"
      }

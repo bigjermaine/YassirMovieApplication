@@ -6,11 +6,11 @@
 //
 
 import UIKit
-
+import JGProgressHUD
 class HomeViewController: UIViewController {
     
-
-    private let tableView:UITableView =  {
+    private let spinner = JGProgressHUD(style:.light)
+    private let discoverMoviesTableView:UITableView =  {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
@@ -27,40 +27,46 @@ class HomeViewController: UIViewController {
         addSuview()
         configureConstraints()
         configureTableDelegate()
-       
+        newWorkFetch()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         HapticManager.shared.vibrateForSelection()
     }
-   private func newWorkFetch() {
+    
+     private func newWorkFetch() {
+        spinner.detailTextLabel.text = "please wait...."
+        spinner.show(in: view)
         ApiManager.shared.getDiscoverMovies {[weak self] result in
             switch result {
             case .success(let success):
                 DispatchQueue.main.async {
                     self?.results = success
+                    self?.discoverMoviesTableView.reloadData()
+                    self?.spinner.dismiss()
                 }
-            case .failure(let failure):
+              case .failure(let failure):
                 guard let self =  self else {return}
                 Alert.showBasic(title: "Error", message: "try again later", vc: self)
+                self.spinner.dismiss()
             }
         }
        
     }
     private func addSuview() {
-        view.addSubview(tableView)
+        view.addSubview(discoverMoviesTableView)
     }
     private func configureConstraints() {
-        tableView.frame = view.bounds
+        discoverMoviesTableView.frame = view.bounds
     }
     private  func configureTableDelegate() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        discoverMoviesTableView.delegate = self
+        discoverMoviesTableView.dataSource = self
     }
     private func configureBackgroundController() {
         view.backgroundColor = .white
-        tableView.backgroundColor = .white
+        discoverMoviesTableView.backgroundColor = .white
         title = "Movies"
     }
    
@@ -75,7 +81,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else
             {return UITableViewCell()}
-            cell.bookMarkButton.isHidden = true
+         let result = results[indexPath.row]
+        cell.configure(viewModel: result)
+        cell.bookMarkButton.isHidden = true
             return cell
         }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -83,6 +91,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        HapticManager.shared.vibrateForSelection()
         let vc = DescriptiveViewController()
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: false)

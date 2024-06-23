@@ -98,9 +98,11 @@ class HomeTableViewCell: UITableViewCell {
             }
     
     func configure(viewModel:Movie) {
-        
-        guard let url = URL(string: "\(Constants.imageBaseUrl)\(viewModel.backdropPath)")
-        movieImageView.sd_setImage(with: <#T##URL?#>)
+        movieLabel.text = viewModel.title
+        subMovielabel.text = viewModel.releaseDate
+        guard let backdropPath = viewModel.backdropPath else {return}
+        guard let url = URL(string: "\(Constants.imageBaseUrl)\(backdropPath)") else {return}
+        movieImageView.sd_setImage(with: url)
     }
 
 }
