@@ -13,7 +13,7 @@ class HomeTableViewCell: UITableViewCell {
     private let movieImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
-        imageView.image = UIImage(named: "2")
+        imageView.image = UIImage(named: "")
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 4
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,7 @@ class HomeTableViewCell: UITableViewCell {
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "The Coming TRONThe Coming TRONThe Coming TRON"
+        label.text = ""
         return label
    }()
     private let subMovielabel: UILabel = {
@@ -38,7 +38,7 @@ class HomeTableViewCell: UITableViewCell {
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 12, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "1994The Coming TRONThe Coming TRON"
+        label.text = ""
         return label
     }()
     

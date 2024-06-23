@@ -19,7 +19,7 @@ class DescriptiveViewController: UIViewController {
     private let movieImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
-        imageView.image = UIImage(named: "2")
+        imageView.image = UIImage(named: "")
         imageView.layer.cornerRadius = 8
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
@@ -33,7 +33,7 @@ class DescriptiveViewController: UIViewController {
         label.numberOfLines = 0
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "To Address To Address To Address To Address To Address To Address  To Address To Address To Address"
+        label.text = ""
         label.clipsToBounds = true
         return label
     }()
@@ -45,7 +45,7 @@ class DescriptiveViewController: UIViewController {
         label.textColor = .black
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "To To Address To Address To Address To Address"
+        label.text = ""
         label.clipsToBounds = true
         return label
     }()
@@ -56,12 +56,12 @@ class DescriptiveViewController: UIViewController {
         label.textColor = .black
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "1994"
+        label.text = ""
         label.clipsToBounds = true
         return label
     }()
     
-    private var result:Movie?
+     var result:Movie?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

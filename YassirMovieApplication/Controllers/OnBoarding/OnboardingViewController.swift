@@ -37,7 +37,7 @@ class OnboardingViewController: UIViewController {
         button.titleLabel?.font = label.font
         button.setTitle("Click To Explore", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = .systemPurple
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true

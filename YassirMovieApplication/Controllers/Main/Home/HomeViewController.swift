@@ -91,8 +91,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let result = results[indexPath.row]
         HapticManager.shared.vibrateForSelection()
         let vc = DescriptiveViewController()
+        vc.result = result
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: false)
     }
