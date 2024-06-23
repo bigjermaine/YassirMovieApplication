@@ -20,6 +20,7 @@ class DescriptiveViewController: UIViewController {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
         imageView.image = UIImage(named: "2")
+        imageView.layer.cornerRadius = 8
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
@@ -28,12 +29,11 @@ class DescriptiveViewController: UIViewController {
     
     private let descriptiveLabel : UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .left
-        label.font = .poppinsRegular(size: 10)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "To Address"
+        label.text = "To Address To Address To Address To Address To Address To Address  To Address To Address To Address"
         label.clipsToBounds = true
         return label
     }()
@@ -42,10 +42,21 @@ class DescriptiveViewController: UIViewController {
     private let titleLabel : UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.textColor = .black
         label.textAlignment = .left
-        label.font = .poppinsRegular(size: 10)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "To Address"
+        label.text = "To To Address To Address To Address To Address"
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    private let subTitleLabel : UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = .black
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "1994"
         label.clipsToBounds = true
         return label
     }()
@@ -56,11 +67,16 @@ class DescriptiveViewController: UIViewController {
         // Do any additional setup after loading the view.
         configureBackgroundController()
         addSubviews()
+        configureConstriants()
       }
     
     func addSubviews() {
         view.addSubview(scrollView)
         scrollView.addSubview(movieImageView)
+        scrollView.addSubview(titleLabel)
+        scrollView.addSubview(subTitleLabel)
+        scrollView.addSubview(descriptiveLabel)
+        
     }
     
      func configureConstriants() {
@@ -70,10 +86,29 @@ class DescriptiveViewController: UIViewController {
              scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
              scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
              
-             movieImageView.topAnchor.constraint(equalTo: scrollView.topAnchor,constant: 100),
-             movieImageView.heightAnchor.constraint(equalToConstant: 100),
-             movieImageView.leadingAnchor.constraint(equalTo:scrollView.leadingAnchor,constant: 10),
-             movieImageView.trailingAnchor.constraint(equalTo:scrollView.trailingAnchor,constant: -10),
+             movieImageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+             movieImageView.heightAnchor.constraint(equalToConstant:300),
+             movieImageView.widthAnchor.constraint(equalTo:view.widthAnchor,constant: -20),
+             movieImageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+             movieImageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor,constant: -20),
+             
+             titleLabel.topAnchor.constraint(equalTo: movieImageView.bottomAnchor,constant: 20),
+             titleLabel.leadingAnchor.constraint(equalTo:scrollView.leadingAnchor,constant: 10),
+             titleLabel.trailingAnchor.constraint(equalTo:scrollView.trailingAnchor,constant: -10),
+             titleLabel.bottomAnchor.constraint(equalTo: subTitleLabel.topAnchor,constant: -20),
+             
+             subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 20),
+             subTitleLabel.leadingAnchor.constraint(equalTo:scrollView.leadingAnchor,constant: 10),
+             subTitleLabel.trailingAnchor.constraint(equalTo:scrollView.trailingAnchor,constant: -10),
+             subTitleLabel.bottomAnchor.constraint(equalTo: descriptiveLabel.topAnchor,constant: -20),
+             
+             
+             
+             
+             descriptiveLabel.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor,constant: 20),
+             descriptiveLabel.leadingAnchor.constraint(equalTo:view.leadingAnchor,constant: 10),
+             descriptiveLabel.trailingAnchor.constraint(equalTo:view.trailingAnchor,constant: -10),
+             descriptiveLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
          
      ])
     }
