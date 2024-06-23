@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class HomeTableViewCell: UITableViewCell {
     
     static let identifier = "HomeTableViewCell"
@@ -96,5 +96,11 @@ class HomeTableViewCell: UITableViewCell {
          
             ])
             }
+    
+    func configure(viewModel:Movie) {
+        
+        guard let url = URL(string: "\(Constants.imageBaseUrl)\(viewModel.backdropPath)")
+        movieImageView.sd_setImage(with: <#T##URL?#>)
+    }
 
 }

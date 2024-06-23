@@ -10,6 +10,8 @@
 		D00337C72C27CA1300060794 /* BookMarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337C62C27CA1300060794 /* BookMarkManager.swift */; };
 		D00337CA2C27CAD200060794 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D00337C92C27CAD200060794 /* Alamofire */; };
 		D00337CC2C27CAD200060794 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D00337CB2C27CAD200060794 /* AlamofireDynamic */; };
+		D00337CF2C27CC7F00060794 /* DiscoverMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337CE2C27CC7F00060794 /* DiscoverMovie.swift */; };
+		D00337D22C27D4DA00060794 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337D12C27D4DA00060794 /* AlertView.swift */; };
 		D07C24252C27200200C5316F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24242C27200200C5316F /* AppDelegate.swift */; };
 		D07C24272C27200200C5316F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24262C27200200C5316F /* SceneDelegate.swift */; };
 		D07C24292C27200200C5316F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24282C27200200C5316F /* OnboardingViewController.swift */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		D00337C62C27CA1300060794 /* BookMarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkManager.swift; sourceTree = "<group>"; };
+		D00337CE2C27CC7F00060794 /* DiscoverMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMovie.swift; sourceTree = "<group>"; };
+		D00337D12C27D4DA00060794 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D07C24212C27200200C5316F /* YassirMovieApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirMovieApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07C24242C27200200C5316F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07C24262C27200200C5316F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,8 +82,17 @@
 		D00337CD2C27CC5800060794 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D00337CE2C27CC7F00060794 /* DiscoverMovie.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D00337D02C27D4B300060794 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D00337D12C27D4DA00060794 /* AlertView.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D07C24182C27200200C5316F = {
@@ -101,6 +114,7 @@
 		D07C24232C27200200C5316F /* YassirMovieApplication */ = {
 			isa = PBXGroup;
 			children = (
+				D00337D02C27D4B300060794 /* Extension */,
 				D00337CD2C27CC5800060794 /* Model */,
 				D07C245D2C277E9C00C5316F /* Views  */,
 				D07C24482C276EAF00C5316F /* GifFiles */,
@@ -307,12 +321,14 @@
 				D07C245C2C27778E00C5316F /* MainTabbarViewController.swift in Sources */,
 				D07C243F2C27223700C5316F /* HapticManager.swift in Sources */,
 				D07C24292C27200200C5316F /* OnboardingViewController.swift in Sources */,
+				D00337D22C27D4DA00060794 /* AlertView.swift in Sources */,
 				D07C24602C277EC100C5316F /* HomeTableViewCell.swift in Sources */,
 				D07C24252C27200200C5316F /* AppDelegate.swift in Sources */,
 				D07C24562C27772000C5316F /* HomeViewController.swift in Sources */,
 				D00337C72C27CA1300060794 /* BookMarkManager.swift in Sources */,
 				D07C24582C27772F00C5316F /* FavoriteViewController.swift in Sources */,
 				D07C24272C27200200C5316F /* SceneDelegate.swift in Sources */,
+				D00337CF2C27CC7F00060794 /* DiscoverMovie.swift in Sources */,
 				D07C245A2C27773A00C5316F /* SettingsViewController.swift in Sources */,
 				D07C24632C27B98C00C5316F /* DescriptiveViewController.swift in Sources */,
 			);

@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
         tableView.backgroundColor =  .white
         return tableView
     }()
+    
+    private var results:[Movie] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,18 +34,31 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         HapticManager.shared.vibrateForSelection()
     }
-   
-    func addSuview() {
+   private func newWorkFetch() {
+        ApiManager.shared.getDiscoverMovies {[weak self] result in
+            switch result {
+            case .success(let success):
+                DispatchQueue.main.async {
+                    self?.results = success
+                }
+            case .failure(let failure):
+                guard let self =  self else {return}
+                Alert.showBasic(title: "Error", message: "try again later", vc: self)
+            }
+        }
+       
+    }
+    private func addSuview() {
         view.addSubview(tableView)
     }
-    func configureConstraints() {
+    private func configureConstraints() {
         tableView.frame = view.bounds
     }
-    func configureTableDelegate() {
+    private  func configureTableDelegate() {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    func configureBackgroundController() {
+    private func configureBackgroundController() {
         view.backgroundColor = .white
         tableView.backgroundColor = .white
         title = "Movies"
@@ -54,7 +69,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 100
+        return results.count
         }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
