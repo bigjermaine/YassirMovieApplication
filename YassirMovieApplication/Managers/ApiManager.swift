@@ -22,7 +22,6 @@ class ApiManager {
                     case .success(let data):
                         do {
                             let result = try JSONDecoder().decode(DiscoverMovieResponse.self, from: data)
-                            print(result)
                             completion(.success(result.results))
                         } catch _ {
                             completion(.failure(NetworkError.decodingFailed))
@@ -49,7 +48,6 @@ class ApiManager {
                     case .success(let data):
                         do {
                             let result = try JSONDecoder().decode(MovieReviewsResponse.self, from: data)
-                            print(result)
                             completion(.success(result.results))
                         } catch _ {
                             completion(.failure(NetworkError.decodingFailed))

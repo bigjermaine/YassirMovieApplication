@@ -158,28 +158,7 @@ class DescriptiveViewController: UIViewController {
         favouriteButton.addTarget(self, action: #selector(didTapToFavouriteMovie), for: .touchUpInside)
         
     }
-    private func checkIfMovieIsFavourite() {
-        guard let result = result else {
-            checkFavoriteBool = false
-            favouriteButton.setTitle("Add To Favourite", for: .normal)
-            favouriteButton.backgroundColor = .systemYellow
-            return
-        }
-        
-        let downloadedMovies = UserDefaults().downloadedMovies()
-        
-        if let index = downloadedMovies.firstIndex(where: { $0.id == result.id }) {
-            // Movie is found in downloadedMovies, mark as favorite
-            checkFavoriteBool = true
-            favouriteButton.setTitle("Part Of Your Favourites⭐️", for: .normal)
-            favouriteButton.backgroundColor = .systemBlue
-        } else {
-            // Movie is not found in downloadedMovies, mark as not favorite
-            checkFavoriteBool = false
-            favouriteButton.setTitle("Add To Favourite", for: .normal)
-            favouriteButton.backgroundColor = .systemYellow
-        }
-    }
+   
 
    @objc func didTapToFavouriteMovie() {
        if checkFavoriteBool {
@@ -245,6 +224,28 @@ class DescriptiveViewController: UIViewController {
         }
     }
     
+    private func checkIfMovieIsFavourite() {
+        guard let result = result else {
+            checkFavoriteBool = false
+            favouriteButton.setTitle("Add To Favourite", for: .normal)
+            favouriteButton.backgroundColor = .systemYellow
+            return
+        }
+        
+        let downloadedMovies = UserDefaults().downloadedMovies()
+        
+        if let index = downloadedMovies.firstIndex(where: { $0.id == result.id }) {
+            // Movie is found in downloadedMovies, mark as favorite
+            checkFavoriteBool = true
+            favouriteButton.setTitle("Part Of Your Favourites⭐️", for: .normal)
+            favouriteButton.backgroundColor = .systemBlue
+        } else {
+            // Movie is not found in downloadedMovies, mark as not favorite
+            checkFavoriteBool = false
+            favouriteButton.setTitle("Add To Favourite", for: .normal)
+            favouriteButton.backgroundColor = .systemYellow
+        }
+    }
     private  func configureBackgroundController() {
         view.backgroundColor = .white
         title = "Movie Details"
