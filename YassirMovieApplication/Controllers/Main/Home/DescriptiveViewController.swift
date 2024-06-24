@@ -100,7 +100,7 @@ class DescriptiveViewController: UIViewController {
     private let firstReviewImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
-        imageView.image = UIImage(named: "")
+        imageView.image = UIImage(systemName:"person.fill")
         imageView.layer.cornerRadius = 25
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
