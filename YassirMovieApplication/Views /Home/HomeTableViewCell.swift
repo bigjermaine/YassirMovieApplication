@@ -10,6 +10,7 @@ import SDWebImage
 class HomeTableViewCell: UITableViewCell {
     
     static let identifier = "HomeTableViewCell"
+    
     private let movieImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
@@ -65,14 +66,14 @@ class HomeTableViewCell: UITableViewCell {
     }
     
 
-    func addContentView() {
+    private  func addContentView() {
         contentView.addSubview(movieLabel)
         contentView.addSubview(subMovielabel)
         contentView.addSubview(movieImageView)
         contentView.addSubview(bookMarkButton)
         
     }
-     func configureLayout() {
+    private  func configureLayout() {
          NSLayoutConstraint.activate([
             movieImageView.heightAnchor.constraint(equalToConstant: 100),
             movieImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
@@ -97,7 +98,7 @@ class HomeTableViewCell: UITableViewCell {
             ])
             }
     
-    func configure(viewModel:Movie) {
+ public  func configure(viewModel:Movie) {
         movieLabel.text = viewModel.title
         subMovielabel.text = viewModel.releaseDate
         guard let backdropPath = viewModel.backdropPath else {return}

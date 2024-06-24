@@ -10,7 +10,7 @@ import Foundation
 enum NetworkError: Error {
     case decodingFailed
     case noInternetConnection
-    // Add more error cases as needed
+
     var localizedDescription: String {
         switch self {
         case .decodingFailed:

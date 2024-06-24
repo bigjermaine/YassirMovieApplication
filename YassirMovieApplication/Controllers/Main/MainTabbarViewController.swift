@@ -8,6 +8,7 @@
 import UIKit
 
 class MainTabbarViewController: UITabBarController {
+    
     let Vc1 =  HomeViewController()
     let Vc2 =  FavoriteViewController()
     let Vc3 =  SettingsViewController()
@@ -18,8 +19,7 @@ class MainTabbarViewController: UITabBarController {
         configureSetupTabbarViewController()
     }
     
-   
-     func configureSetupTabbarViewController() {
+    private  func configureSetupTabbarViewController() {
       
          Vc1.navigationItem.largeTitleDisplayMode = .never
          Vc2.navigationItem.largeTitleDisplayMode = .never
@@ -30,13 +30,10 @@ class MainTabbarViewController: UITabBarController {
          let nav2 = UINavigationController(rootViewController: Vc2)
          let nav3 = UINavigationController(rootViewController: Vc3)
      
-      
-         
          nav1.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "movieclapper"), tag: 0)
          nav2.tabBarItem = UITabBarItem(title: "Favourite", image: UIImage(systemName: "star.fill"), tag: 1)
          nav3.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
        
-         
          nav1.navigationBar.backgroundColor = .clear
          nav1.navigationBar.setBackgroundImage(UIImage(), for: .default)
          nav1.navigationBar.shadowImage = UIImage()

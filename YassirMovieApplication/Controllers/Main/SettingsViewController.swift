@@ -52,16 +52,7 @@ class SettingsViewController: UIViewController {
         configureAction()
         setUpGif()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        HapticManager.shared.vibrateForSelection()
-    }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        let screenWidth = UIScreen.main.bounds.width
-        avatarImageView.frame = CGRect(x: (screenWidth - 64) / 2, y: view.safeAreaInsets.top + 10, width: 64, height: 64)
-        logoutButton.frame = CGRect(x:20, y:avatarImageView.bottom + 40, width: 90, height:50)
-        settingSeachImageView.frame = CGRect(x: (screenWidth - 64) / 2, y: logoutButton.bottom + 20, width: 100, height: 100)
-    }
+    
     private func setUpGif() {
         settingSeachImageView.image = UIImage.gifImageWithName("checking")
     }
@@ -70,23 +61,23 @@ class SettingsViewController: UIViewController {
     }
     
     @objc  func didTapLogout() {
+        HapticManager.shared.vibrate(for: .warning)
         let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
-
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: { _ in
             // User confirmed logout
+            HapticManager.shared.vibrate(for: .success)
             let welcomeViewController = OnboardingViewController()
             let navController = welcomeViewController
             if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate,
-                let window = sceneDelegate.window {
+               let window = sceneDelegate.window {
                 window.rootViewController = navController
             }
         }))
-
-        // Assuming your initial view controller is a UINavigationController
         navigationController?.present(alert, animated: true, completion: nil)
+        
+    }
     
-       }
     private func configureHomeAvatar() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapAvatar))
         avatarImageView.isUserInteractionEnabled = true
@@ -95,14 +86,11 @@ class SettingsViewController: UIViewController {
     private func backgroundSetup() {
         title = "Profile"
         view.backgroundColor =  .white
-     }
-    private func addSubviews() {
-        view.addSubview(avatarImageView)
-        view.addSubview(logoutButton)
-        view.addSubview(settingSeachImageView)
     }
     
+    
     @objc  func didTapAvatar() {
+        HapticManager.shared.vibrate(for: .success)
         let actionSheet = UIAlertController(title: "Profile Picture", message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _  in
@@ -115,7 +103,7 @@ class SettingsViewController: UIViewController {
                 self.presentProfilePicturePicker(type: .photoLibrary)
             }
         }))
-
+        
         present(actionSheet, animated: true)
     }
     private   func presentProfilePicturePicker(type: PicturePickerType) {
@@ -124,6 +112,23 @@ class SettingsViewController: UIViewController {
         picker.delegate = self
         picker.allowsEditing = true
         present(picker, animated: true)
+    }
+    
+    
+    private func addSubviews() {
+        view.addSubview(avatarImageView)
+        view.addSubview(logoutButton)
+        view.addSubview(settingSeachImageView)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        HapticManager.shared.vibrateForSelection()
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let screenWidth = UIScreen.main.bounds.width
+        avatarImageView.frame = CGRect(x: (screenWidth - 64) / 2, y: view.safeAreaInsets.top + 10, width: 64, height: 64)
+        logoutButton.frame = CGRect(x:20, y:avatarImageView.bottom + 40, width: 90, height:50)
+        settingSeachImageView.frame = CGRect(x: (screenWidth - 64) / 2, y: logoutButton.bottom + 20, width: 100, height: 100)
     }
 }
 

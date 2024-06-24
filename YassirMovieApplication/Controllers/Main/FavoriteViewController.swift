@@ -52,7 +52,7 @@ class FavoriteViewController: UIViewController {
         noFavouritesImageView.image = UIImage.gifImageWithName("password")
     }
     private func makeBadgeNil() {
-        tabBarController?.tabBar.items?[0].badgeValue = nil
+        tabBarController?.tabBar.items?[1].badgeValue = nil
     }
     private func addSuview() {
         view.addSubview(discoverMoviesTableView)

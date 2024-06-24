@@ -8,6 +8,7 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
+    
     private let  onboardingImageView : UIImageView  = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "")
@@ -58,7 +59,7 @@ class OnboardingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         HapticManager.shared.vibrateForSelection()
     }
-    func configureButton() {
+    private   func configureButton() {
         HapticManager.shared.vibrate(for: .success)
         createNewWalletButton.addTarget(self, action: #selector(didTap), for: .touchUpInside)
     }
@@ -70,17 +71,17 @@ class OnboardingViewController: UIViewController {
             let  maintTabbarViewController = MainTabbarViewController()
             window.rootViewController = maintTabbarViewController
          }
-       
     }
-    func configureBackgroundController() {
+    
+   private func configureBackgroundController() {
         view.backgroundColor = .white
     }
-    func addSubviews() {
+    private   func addSubviews() {
         view.addSubview(onboardingImageView)
         view.addSubview(onboardingLabel)
         view.addSubview(createNewWalletButton)
     }
-    func setUpGif() {
+    private  func setUpGif() {
         onboardingImageView .image = UIImage.gifImageWithName("unboarding")
     }
     

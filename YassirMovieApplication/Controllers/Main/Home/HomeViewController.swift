@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         HapticManager.shared.vibrateForSelection()
     }
-    func configureActions() {
+    private  func configureActions() {
         refreshControl.addTarget(self, action: #selector(newWorkFetch), for: .valueChanged)
         discoverMoviesTableView.refreshControl = refreshControl
     }
