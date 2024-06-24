@@ -41,6 +41,33 @@ class ApiManager {
         
     }
     
+    public func getReviewsMovies(movieID:Int,completion: @escaping (Result< [MovieReview], Error>) -> Void) {
+         createRequest(with: "movie/\(movieID)/reviews", page: "1", type: .get) { request in
+            AF.request(request)
+                .responseData { response in
+                    switch response.result {
+                    case .success(let data):
+                        do {
+                            let result = try JSONDecoder().decode(MovieReviewsResponse.self, from: data)
+                            print(result)
+                            completion(.success(result.results))
+                        } catch _ {
+                            completion(.failure(NetworkError.decodingFailed))
+                        }
+                    case .failure(let error):
+                        if let underlyingError = error.underlyingError as NSError?,
+                           underlyingError.domain == NSURLErrorDomain,
+                           underlyingError.code == NSURLErrorNotConnectedToInternet {
+                            completion(.failure(NetworkError.noInternetConnection))
+                        } else {
+                            completion(.failure(error))
+                        }
+                    }
+                }
+        }
+        
+    }
+    
     //Note:Network fetch through URLSession
     public  func getYoutubeTrailer(with query: String,completion: @escaping (Result<Videoelement, Error>) ->  Void)  {
      guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}

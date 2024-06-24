@@ -97,6 +97,51 @@ class DescriptiveViewController: UIViewController {
         return button
     }()
     
+    private let firstReviewImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.layer.masksToBounds = true
+        imageView.image = UIImage(named: "")
+        imageView.layer.cornerRadius = 25
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    private let reviewTitleLabel : UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = .black
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Reviews"
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    private let firstReviewLabel : UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = .black
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 12, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = ""
+        label.clipsToBounds = true
+        return label
+    }()
+    private let SeocndReviewImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.layer.masksToBounds = true
+        imageView.image = UIImage(named: "")
+        imageView.layer.cornerRadius = 8
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
     var result:Movie?
     var checkFavoriteBool:Bool = false
     override func viewDidLoad() {
@@ -151,7 +196,7 @@ class DescriptiveViewController: UIViewController {
     }
     private func configureData() {
         noVideoImageView.image = UIImage.gifImageWithName("created")
-        fetchYoutubeDetails()
+    
         guard let result = result else {return}
         titleLabel.text = result.title
         subTitleLabel.text = result.releaseDate
@@ -159,6 +204,7 @@ class DescriptiveViewController: UIViewController {
         guard let backdropPath = result.backdropPath else {return}
         guard let url = URL(string: "\(Constants.imageBaseUrl)\(backdropPath)") else {return}
         movieImageView.sd_setImage(with: url)
+        fetchYoutubeDetails()
         
     }
     
@@ -181,6 +227,22 @@ class DescriptiveViewController: UIViewController {
                 self.spinner.dismiss()
             }
         }
+        guard let result = result else {return}
+        ApiManager.shared.getReviewsMovies(movieID: result.id ) { result in
+            switch result {
+            case .success(let success):
+                DispatchQueue.main.async {[weak self] in
+                    guard let success = success.first else {return}
+                    self?.firstReviewLabel.text = success.content
+                    guard let imagePath  = success.author_details.avatar_path  else {return}
+                    guard let url = URL(string: "\(Constants.imageBaseUrl)\(imagePath)") else {return}
+                    self?.firstReviewImageView.sd_setImage(with: url)
+                }
+            case .failure(let failure):
+                Alert.showBasic(title: "Error", message: failure.localizedDescription, vc: self)
+                self.spinner.dismiss()
+            }
+        }
     }
     
     private  func configureBackgroundController() {
@@ -197,6 +259,9 @@ class DescriptiveViewController: UIViewController {
         scrollView.addSubview(webView)
         scrollView.addSubview(noVideoImageView)
         scrollView.addSubview(favouriteButton)
+        scrollView.addSubview(reviewTitleLabel)
+        scrollView.addSubview(firstReviewImageView)
+        scrollView.addSubview(firstReviewLabel)
         
     }
     
@@ -249,11 +314,27 @@ class DescriptiveViewController: UIViewController {
             favouriteButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10),
             favouriteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -10),
             favouriteButton.heightAnchor.constraint(equalToConstant: 50),
-            favouriteButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor,constant: -20),
+         //   favouriteButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor,constant: -20),
+            
+            
+            reviewTitleLabel.topAnchor.constraint(equalTo: favouriteButton.bottomAnchor, constant: 10),
+            reviewTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10),
+            reviewTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -10),
             
             
             
             
+            firstReviewImageView.topAnchor.constraint(equalTo: reviewTitleLabel.bottomAnchor, constant: 10),
+            firstReviewImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10),
+            firstReviewImageView.heightAnchor.constraint(equalToConstant: 50),
+            firstReviewImageView.widthAnchor.constraint(equalToConstant: 50),
+            
+            
+            firstReviewLabel.topAnchor.constraint(equalTo: reviewTitleLabel.bottomAnchor, constant: 10),
+            firstReviewLabel.leadingAnchor.constraint(equalTo: firstReviewImageView.trailingAnchor,constant: 10),
+            firstReviewLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -10),
+            firstReviewLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor,constant: -20),
+        
         ])
     }
     

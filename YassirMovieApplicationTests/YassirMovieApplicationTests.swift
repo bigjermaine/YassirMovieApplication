@@ -6,10 +6,9 @@
 //
 
 import XCTest
-
 @testable import YassirMovieApplication
 
-final class APiManagerTest: XCTestCase {
+final class YassirMovieApplicationTests: XCTestCase {
 
     
     func test_apiValuesKeys_ifIsEqualToMainKeys() {
@@ -22,7 +21,7 @@ final class APiManagerTest: XCTestCase {
         let MainTestGoogleKey = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZjgwMDI5MTMyYzJhYWFhNjVjNTU1ZDg4ZDk5Zjc0ZSIsIm5iZiI6MTcxOTA4NzA2My42NzAwMjksInN1YiI6IjY2NzcyZWQ0NTJlOGQ1MDk5MTVlNzBiMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GqDlNVeG1TpJRdDNx6jDIlDwo0uHOi05_fUdJ5nEvHU"
         let MainTestApiKeY =  "30bbc9465ce5edc1448ae2367d7727b7"
         
-        XCTAssertEqual(TestAuthorizationKey,MainTestAuthorizationKey )
+        XCTAssertEqual(TestAuthorizationKey,MainTestAuthorizationKey)
         XCTAssertEqual(TestGoogleKey,MainTestGoogleKey )
         XCTAssertEqual(TestApiKeY, MainTestApiKeY)
     }
@@ -41,4 +40,5 @@ final class APiManagerTest: XCTestCase {
         XCTAssertNotEqual(TestApiKeY, MainTestApiKeY)
         
     }
+
 }
