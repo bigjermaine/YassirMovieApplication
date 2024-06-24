@@ -28,7 +28,6 @@ final class APiManagerTest: XCTestCase {
     }
  
     func test_APiValueKeys_ifIsNotEquelToMainKeys() {
-        
         let TestAuthorizationKey = Constants.AuthorizationToken
         let TestApiKeY =  Constants.Api_key
         let TestGoogleKey = Constants.google
