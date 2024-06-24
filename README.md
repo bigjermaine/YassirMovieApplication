@@ -14,6 +14,4 @@ Frontend: SwiftUI for building the user interface.
 Backend: Integrates with The Movie Database (TMDb) API for movie data.
 Persistence: Core Data for local storage of bookmarked movies.
 Networking: URLSession for making API requests.
-![Simulator Screenshot - iphone11 - 2024-06-24 at 03 38 04](https://github.com/bigjermaine/YassirMovieApplication/assets/113020989/eae238fc-aa2d-4bc8-a309-ba2431b25b80![Simulator 
-)
-)
+![Simulator Screenshot - iphone11 - 2024-06-24 at 03 41 08](https://github.com/bigjermaine/YassirMovieApplication/assets/113020989/0674a2cb-9d26-48a9-8d37-11cf273cc4d5)
