@@ -17,6 +17,7 @@
 		D00337D82C28034A00060794 /* YoutubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337D72C28034A00060794 /* YoutubeModel.swift */; };
 		D00337DA2C28A98600060794 /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337D92C28A98600060794 /* UiViewExtension.swift */; };
 		D00337DC2C28ADC900060794 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337DB2C28ADC900060794 /* ReviewModel.swift */; };
+		D00337E72C290D7D00060794 /* YassirMovieApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337E62C290D7D00060794 /* YassirMovieApplicationTests.swift */; };
 		D07C24252C27200200C5316F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24242C27200200C5316F /* AppDelegate.swift */; };
 		D07C24272C27200200C5316F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24262C27200200C5316F /* SceneDelegate.swift */; };
 		D07C24292C27200200C5316F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24282C27200200C5316F /* OnboardingViewController.swift */; };
@@ -41,6 +42,16 @@
 		D07C24662C27C6A800C5316F /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D07C24652C27C6A800C5316F /* JGProgressHUD */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D00337E82C290D7D00060794 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D07C24192C27200200C5316F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D07C24202C27200200C5316F;
+			remoteInfo = YassirMovieApplication;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D00337C62C27CA1300060794 /* BookMarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkManager.swift; sourceTree = "<group>"; };
 		D00337CE2C27CC7F00060794 /* DiscoverMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMovie.swift; sourceTree = "<group>"; };
@@ -50,6 +61,8 @@
 		D00337D72C28034A00060794 /* YoutubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeModel.swift; sourceTree = "<group>"; };
 		D00337D92C28A98600060794 /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
 		D00337DB2C28ADC900060794 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		D00337E42C290D7D00060794 /* YassirMovieApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YassirMovieApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D00337E62C290D7D00060794 /* YassirMovieApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YassirMovieApplicationTests.swift; sourceTree = "<group>"; };
 		D07C24212C27200200C5316F /* YassirMovieApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirMovieApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07C24242C27200200C5316F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07C24262C27200200C5316F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +87,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D00337E12C290D7D00060794 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D07C241E2C27200200C5316F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,10 +130,19 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		D00337E52C290D7D00060794 /* YassirMovieApplicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				D00337E62C290D7D00060794 /* YassirMovieApplicationTests.swift */,
+			);
+			path = YassirMovieApplicationTests;
+			sourceTree = "<group>";
+		};
 		D07C24182C27200200C5316F = {
 			isa = PBXGroup;
 			children = (
 				D07C24232C27200200C5316F /* YassirMovieApplication */,
+				D00337E52C290D7D00060794 /* YassirMovieApplicationTests */,
 				D07C24222C27200200C5316F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				D07C24212C27200200C5316F /* YassirMovieApplication.app */,
+				D00337E42C290D7D00060794 /* YassirMovieApplicationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,6 +277,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D00337E32C290D7D00060794 /* YassirMovieApplicationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D00337EA2C290D7D00060794 /* Build configuration list for PBXNativeTarget "YassirMovieApplicationTests" */;
+			buildPhases = (
+				D00337E02C290D7D00060794 /* Sources */,
+				D00337E12C290D7D00060794 /* Frameworks */,
+				D00337E22C290D7D00060794 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D00337E92C290D7D00060794 /* PBXTargetDependency */,
+			);
+			name = YassirMovieApplicationTests;
+			productName = YassirMovieApplicationTests;
+			productReference = D00337E42C290D7D00060794 /* YassirMovieApplicationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D07C24202C27200200C5316F /* YassirMovieApplication */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D07C24352C27200400C5316F /* Build configuration list for PBXNativeTarget "YassirMovieApplication" */;
@@ -281,6 +329,10 @@
 				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
+					D00337E32C290D7D00060794 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = D07C24202C27200200C5316F;
+					};
 					D07C24202C27200200C5316F = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -305,11 +357,19 @@
 			projectRoot = "";
 			targets = (
 				D07C24202C27200200C5316F /* YassirMovieApplication */,
+				D00337E32C290D7D00060794 /* YassirMovieApplicationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D00337E22C290D7D00060794 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D07C241F2C27200200C5316F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,6 +387,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D00337E02C290D7D00060794 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D00337E72C290D7D00060794 /* YassirMovieApplicationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D07C241D2C27200200C5316F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +424,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D00337E92C290D7D00060794 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D07C24202C27200200C5316F /* YassirMovieApplication */;
+			targetProxy = D00337E82C290D7D00060794 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D07C242F2C27200400C5316F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -368,6 +444,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D00337EB2C290D7D00060794 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HNS64TAJ9X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dexlist.YassirMovieApplicationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YassirMovieApplication.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YassirMovieApplication";
+			};
+			name = Debug;
+		};
+		D00337EC2C290D7D00060794 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HNS64TAJ9X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dexlist.YassirMovieApplicationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YassirMovieApplication.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YassirMovieApplication";
+			};
+			name = Release;
+		};
 		D07C24332C27200400C5316F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -544,6 +656,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D00337EA2C290D7D00060794 /* Build configuration list for PBXNativeTarget "YassirMovieApplicationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D00337EB2C290D7D00060794 /* Debug */,
+				D00337EC2C290D7D00060794 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D07C241C2C27200200C5316F /* Build configuration list for PBXProject "YassirMovieApplication" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -16,8 +16,10 @@ class SettingsViewController: UIViewController {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(systemName: "person.fill")
-        imageView.layer.cornerRadius = 4
+        imageView.image = UIImage(systemName: "person.fill")?.withRenderingMode(.alwaysOriginal)
+        imageView.tintColor = .white
+        imageView.layer.cornerRadius = 32
+        imageView.backgroundColor = .red
         return imageView
     }()
     
@@ -33,6 +35,13 @@ class SettingsViewController: UIViewController {
         return button
     }()
     
+    private let  settingSeachImageView : UIImageView  = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "")
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +50,7 @@ class SettingsViewController: UIViewController {
         addSubviews()
         configureHomeAvatar()
         configureAction()
+        setUpGif()
     }
     override func viewWillAppear(_ animated: Bool) {
         HapticManager.shared.vibrateForSelection()
@@ -49,7 +59,11 @@ class SettingsViewController: UIViewController {
         super.viewDidLayoutSubviews()
         let screenWidth = UIScreen.main.bounds.width
         avatarImageView.frame = CGRect(x: (screenWidth - 64) / 2, y: view.safeAreaInsets.top + 10, width: 64, height: 64)
-        logoutButton.frame = CGRect(x:20, y:avatarImageView.bottom + 40, width: 80, height: 64)
+        logoutButton.frame = CGRect(x:20, y:avatarImageView.bottom + 40, width: 90, height:50)
+        settingSeachImageView.frame = CGRect(x: (screenWidth - 64) / 2, y: logoutButton.bottom + 20, width: 100, height: 100)
+    }
+    private func setUpGif() {
+        settingSeachImageView.image = UIImage.gifImageWithName("checking")
     }
     private func configureAction() {
         logoutButton.addTarget(self, action: #selector(didTapLogout), for: .touchUpInside)
@@ -85,6 +99,7 @@ class SettingsViewController: UIViewController {
     private func addSubviews() {
         view.addSubview(avatarImageView)
         view.addSubview(logoutButton)
+        view.addSubview(settingSeachImageView)
     }
     
     @objc  func didTapAvatar() {
