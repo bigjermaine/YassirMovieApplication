@@ -115,7 +115,7 @@ class DescriptiveViewController: UIViewController {
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Reviews"
+        label.text = "Review"
         label.clipsToBounds = true
         return label
     }()
@@ -214,7 +214,9 @@ class DescriptiveViewController: UIViewController {
                     guard let success = success.first else {return}
                     self?.firstReviewLabel.text = success.content
                     guard let imagePath  = success.author_details.avatar_path  else {return}
-                    guard let url = URL(string: "\(Constants.imageBaseUrl)\(imagePath)") else {return}
+                    guard let url = URL(string: "\(Constants.imageBaseUrl)\(imagePath)") else {
+                        return
+                    }
                     self?.firstReviewImageView.sd_setImage(with: url)
                 }
             case .failure(let failure):

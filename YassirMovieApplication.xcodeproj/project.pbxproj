@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D00337C72C27CA1300060794 /* BookMarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337C62C27CA1300060794 /* BookMarkManager.swift */; };
-		D00337CA2C27CAD200060794 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D00337C92C27CAD200060794 /* Alamofire */; };
-		D00337CC2C27CAD200060794 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D00337CB2C27CAD200060794 /* AlamofireDynamic */; };
 		D00337CF2C27CC7F00060794 /* DiscoverMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337CE2C27CC7F00060794 /* DiscoverMovie.swift */; };
 		D00337D22C27D4DA00060794 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337D12C27D4DA00060794 /* AlertView.swift */; };
 		D00337D42C27DC7C00060794 /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337D32C27DC7C00060794 /* CustomErrors.swift */; };
@@ -17,6 +15,10 @@
 		D00337D82C28034A00060794 /* YoutubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337D72C28034A00060794 /* YoutubeModel.swift */; };
 		D00337DA2C28A98600060794 /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337D92C28A98600060794 /* UiViewExtension.swift */; };
 		D00337DC2C28ADC900060794 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00337DB2C28ADC900060794 /* ReviewModel.swift */; };
+		D006ED6D2C37B96100B7E388 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D006ED6C2C37B96100B7E388 /* SDWebImage */; };
+		D006ED6F2C37B96100B7E388 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D006ED6E2C37B96100B7E388 /* SDWebImageMapKit */; };
+		D006ED772C37B99700B7E388 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D006ED762C37B99700B7E388 /* JGProgressHUD */; };
+		D006ED7D2C37BB0700B7E388 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D006ED7C2C37BB0700B7E388 /* Alamofire */; };
 		D07C24252C27200200C5316F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24242C27200200C5316F /* AppDelegate.swift */; };
 		D07C24272C27200200C5316F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24262C27200200C5316F /* SceneDelegate.swift */; };
 		D07C24292C27200200C5316F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24282C27200200C5316F /* OnboardingViewController.swift */; };
@@ -24,8 +26,6 @@
 		D07C24312C27200400C5316F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07C242F2C27200400C5316F /* LaunchScreen.storyboard */; };
 		D07C243D2C27217100C5316F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C243C2C27217100C5316F /* ApiManager.swift */; };
 		D07C243F2C27223700C5316F /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C243E2C27223700C5316F /* HapticManager.swift */; };
-		D07C24422C27262F00C5316F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D07C24412C27262F00C5316F /* SDWebImage */; };
-		D07C24442C27262F00C5316F /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D07C24432C27262F00C5316F /* SDWebImageMapKit */; };
 		D07C24472C276E7800C5316F /* GifFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24462C276E7800C5316F /* GifFile.swift */; };
 		D07C244E2C276EAF00C5316F /* created.gif in Resources */ = {isa = PBXBuildFile; fileRef = D07C24492C276EAF00C5316F /* created.gif */; };
 		D07C244F2C276EAF00C5316F /* password.gif in Resources */ = {isa = PBXBuildFile; fileRef = D07C244A2C276EAF00C5316F /* password.gif */; };
@@ -38,7 +38,6 @@
 		D07C245C2C27778E00C5316F /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C245B2C27778E00C5316F /* MainTabbarViewController.swift */; };
 		D07C24602C277EC100C5316F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C245F2C277EC100C5316F /* HomeTableViewCell.swift */; };
 		D07C24632C27B98C00C5316F /* DescriptiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C24622C27B98C00C5316F /* DescriptiveViewController.swift */; };
-		D07C24662C27C6A800C5316F /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D07C24652C27C6A800C5316F /* JGProgressHUD */; };
 		D0AE60872C292E8B00B51C3E /* YassirMovieApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AE60862C292E8B00B51C3E /* YassirMovieApplicationTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,11 +90,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D07C24442C27262F00C5316F /* SDWebImageMapKit in Frameworks */,
-				D00337CA2C27CAD200060794 /* Alamofire in Frameworks */,
-				D00337CC2C27CAD200060794 /* AlamofireDynamic in Frameworks */,
-				D07C24662C27C6A800C5316F /* JGProgressHUD in Frameworks */,
-				D07C24422C27262F00C5316F /* SDWebImage in Frameworks */,
+				D006ED6F2C37B96100B7E388 /* SDWebImageMapKit in Frameworks */,
+				D006ED7D2C37BB0700B7E388 /* Alamofire in Frameworks */,
+				D006ED6D2C37B96100B7E388 /* SDWebImage in Frameworks */,
+				D006ED772C37B99700B7E388 /* JGProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,11 +289,10 @@
 			);
 			name = YassirMovieApplication;
 			packageProductDependencies = (
-				D07C24412C27262F00C5316F /* SDWebImage */,
-				D07C24432C27262F00C5316F /* SDWebImageMapKit */,
-				D07C24652C27C6A800C5316F /* JGProgressHUD */,
-				D00337C92C27CAD200060794 /* Alamofire */,
-				D00337CB2C27CAD200060794 /* AlamofireDynamic */,
+				D006ED6C2C37B96100B7E388 /* SDWebImage */,
+				D006ED6E2C37B96100B7E388 /* SDWebImageMapKit */,
+				D006ED762C37B99700B7E388 /* JGProgressHUD */,
+				D006ED7C2C37BB0700B7E388 /* Alamofire */,
 			);
 			productName = YassirMovieApplication;
 			productReference = D07C24212C27200200C5316F /* YassirMovieApplication.app */;
@@ -348,9 +345,9 @@
 			);
 			mainGroup = D07C24182C27200200C5316F;
 			packageReferences = (
-				D07C24402C27262F00C5316F /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				D07C24642C27C6A800C5316F /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
-				D00337C82C27CAD200060794 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D006ED6B2C37B96100B7E388 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				D006ED752C37B99700B7E388 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				D006ED7B2C37BB0700B7E388 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = D07C24222C27200200C5316F /* Products */;
 			projectDirPath = "";
@@ -496,7 +493,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -553,7 +550,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -573,10 +570,12 @@
 				DEVELOPMENT_TEAM = HNS64TAJ9X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YassirMovieApplication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Reeze;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -600,10 +599,12 @@
 				DEVELOPMENT_TEAM = HNS64TAJ9X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YassirMovieApplication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Reeze;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -686,23 +687,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D00337C82C27CAD200060794 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
-		D07C24402C27262F00C5316F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+		D006ED6B2C37B96100B7E388 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.19.3;
+				minimumVersion = 5.19.4;
 			};
 		};
-		D07C24642C27C6A800C5316F /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+		D006ED752C37B99700B7E388 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
 			requirement = {
@@ -710,33 +703,36 @@
 				minimumVersion = 2.2.0;
 			};
 		};
+		D006ED7B2C37BB0700B7E388 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D00337C92C27CAD200060794 /* Alamofire */ = {
+		D006ED6C2C37B96100B7E388 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D00337C82C27CAD200060794 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		D00337CB2C27CAD200060794 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D00337C82C27CAD200060794 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
-		};
-		D07C24412C27262F00C5316F /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D07C24402C27262F00C5316F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = D006ED6B2C37B96100B7E388 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		D07C24432C27262F00C5316F /* SDWebImageMapKit */ = {
+		D006ED6E2C37B96100B7E388 /* SDWebImageMapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D07C24402C27262F00C5316F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = D006ED6B2C37B96100B7E388 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
 		};
-		D07C24652C27C6A800C5316F /* JGProgressHUD */ = {
+		D006ED762C37B99700B7E388 /* JGProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D07C24642C27C6A800C5316F /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			package = D006ED752C37B99700B7E388 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
 			productName = JGProgressHUD;
+		};
+		D006ED7C2C37BB0700B7E388 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D006ED7B2C37BB0700B7E388 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
